@@ -1,0 +1,24 @@
+---
+  - name: Install MySQL-Python
+    yum:
+      name: MySQL-python
+      state: latest
+
+  - name: Create redcap db
+    mysql_db:
+      login_user: "{{ mysql_user }}"
+      login_password: "{{ mysql_password }}"
+      login_host: "{{ rds_mysql_host }}"
+      name: redcap
+      state: present
+
+  - name: Create redcap user
+    mysql_user:
+      login_user: "{{ mysql_user }}"
+      login_password: "{{ mysql_password }}"
+      login_host: "{{ rds_mysql_host }}"
+      name: "{{ redcap_db_username }}"
+      password: "{{ redcap_db_userpassword }}"
+      host: "%"
+      priv: "redcap.*:SELECT,INSERT,UPDATE,DELETE,GRANT"
+      state: present

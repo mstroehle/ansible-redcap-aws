@@ -1,0 +1,21 @@
+---
+- name: Install Redcap
+  hosts: redcap_install
+  remote_user: "{{ remote_user }}"
+  become: yes
+  become_method: sudo
+  become_user: root
+  vars_files:
+    - redcap_vars/vars/provision_redcap.yml
+
+  roles:
+    - etc_resolv
+    - update
+    - install_iptables
+    - install_mysql_client
+    - install_apache
+    - install_php
+    - configure_iptables
+    - transfer_redcap
+    - configure_redcap_mysql
+    - mysql_bools

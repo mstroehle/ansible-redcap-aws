@@ -1,0 +1,30 @@
+---
+  - name: Install PHP
+    yum:
+      name: php
+      state: latest
+
+  - name: Install PHP-mysql
+    yum:
+      name: php-mysql
+      state: latest
+
+  - name: Install php-mbstring
+    yum:
+      name: php-mbstring
+      state: latest
+
+  - name: Install php-xml
+    yum:
+      name: php-xml
+      state: latest
+
+  - name: Install php-gd
+    yum:
+      name: php-gd
+      state: latest
+
+  - name: Restart Apache
+    systemd:
+      name: httpd
+      state: restarted

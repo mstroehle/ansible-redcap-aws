@@ -1,0 +1,13 @@
+---
+  - name: Install unzip
+    yum:
+      name: 'unzip'
+      state: latest
+
+  - name: unzip redcap
+    unarchive:
+      src: "{{ redcap_zipfile }}"
+      dest: /var/www/html/
+      owner: apache
+      group: apache
+

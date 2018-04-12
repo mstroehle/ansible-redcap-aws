@@ -1,0 +1,11 @@
+remote_user: (typically ec2-user)
+organization:
+whitelist_ips:
+redcap_zipfile: (ex: ../files/redcap8.1.5.zip)
+mysql_user:
+mysql_password:
+redcap_db_username:
+redcap_db_userpassword:
+rds_mysql_host:
+salt:
+

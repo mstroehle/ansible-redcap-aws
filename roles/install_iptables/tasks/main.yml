@@ -1,0 +1,19 @@
+---
+  - name: Install iptables
+    yum:
+      name: iptables-services
+      state: latest
+
+  - name: enable iptables
+    systemd:
+      name: iptables
+      enabled: yes
+      state: started
+
+  - name: disable firewalld
+    systemd:
+      name: firewalld
+      state: stopped
+      enabled: no
+      masked: yes
+

@@ -1,0 +1,9 @@
+---
+# Configure AWS resolv.conf
+- name: Configure resolv.conf
+  copy:
+    src: resolv.conf
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: 0644

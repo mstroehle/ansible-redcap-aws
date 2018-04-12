@@ -1,0 +1,11 @@
+---
+  - name: Install Apache (HTTPD)
+    yum:
+      name: httpd
+      state: latest
+
+  - name: Enable Apache
+    systemd:
+      name: httpd
+      enabled: yes
+

@@ -1,0 +1,13 @@
+---
+  - name: Transfer IPtables file with whitelist ips
+    template:
+      src: templates/iptables.j2
+      dest: /etc/sysconfig/iptables
+      owner: root
+      group: root
+      mode: 0600
+
+  - name:
+    systemd:
+      name: iptables
+      state: restarted

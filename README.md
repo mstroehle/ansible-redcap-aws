@@ -21,14 +21,23 @@ https://community.projectredcap.org/index.html#
 3) Edit the vars in redcap_vars/vars/provision_redcap.yml
 
   remote_user: typically ec2-user
+
   organization: Your organization name
+
   whitelist_ips: IP address for web access
+
   redcap_zipfile: (ex: ../files/redcap8.1.5.zip)
+
   mysql_user: the root mysql user name
+
   mysql_password: the root mysql password
+
   redcap_db_username: the redcap mysql db user
+
   redcap_db_userpassword: the redcap mysql db user password
+
   rds_mysql_host: the rds host address
+
   salt: (for use with ansible-vault)
 
 4) With your aws key added to your ssh key-chain run:
